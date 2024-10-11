@@ -10,6 +10,8 @@ import { StaticImageData } from "next/image";
 const HeroSection: React.FC = () => {
   const images: StaticImageData[] = [herImage, heriImage, heroImage, herpImage];
   const [currentImage, setCurrentImage] = useState<number>(0);
+  const [showWomenDropdown, setShowWomenDropdown] = useState<boolean>(false);
+  const [showMenDropdown, setShowMenDropdown] = useState<boolean>(false);
 
   const nextImage = () => {
     setCurrentImage((prevIndex) => (prevIndex + 1) % images.length);
@@ -25,12 +27,44 @@ const HeroSection: React.FC = () => {
     setCurrentImage(index);
   };
 
+  const toggleWomenDropdown = () => {
+    setShowWomenDropdown((prev) => !prev);
+  };
+
+  const toggleMenDropdown = () => {
+    setShowMenDropdown((prev) => !prev);
+  };
+
   return (
     <div className="flex flex-col md:flex-row justify-between items-center h-auto max-w-5xl mx-auto relative p-4">
       <div className="w-full md:w-1/4 mt-6 md:mt-12">
         <ul className="text-left space-y-2 md:space-y-4">
-          <li className="text-lg md:text-xl font-medium cursor-pointer hover:text-gray-600">Womens Fashion <span className="ml-12 font-bold">&#9002;</span></li>
-          <li className="text-lg md:text-xl font-medium cursor-pointer hover:text-gray-600">Mens Fashion <span className="ml-20 font-bold">&#9002;</span></li>
+          <li className="text-lg md:text-xl font-medium cursor-pointer hover:text-gray-600">
+            <div onClick={toggleWomenDropdown} className="flex items-center justify-between">
+              Womens Fashion 
+              <span className="ml-2 font-bold">&#9662;</span> {/* Dropdown arrow */}
+            </div>
+            {showWomenDropdown && (
+              <ul className="ml-4 mt-1 space-y-2">
+                <li className="text-lg cursor-pointer hover:text-gray-600">Dresses</li>
+                <li className="text-lg cursor-pointer hover:text-gray-600">Tops</li>
+                <li className="text-lg cursor-pointer hover:text-gray-600">Accessories</li>
+              </ul>
+            )}
+          </li>
+          <li className="text-lg md:text-xl font-medium cursor-pointer hover:text-gray-600">
+            <div onClick={toggleMenDropdown} className="flex items-center justify-between">
+              Mens Fashion 
+              <span className="ml-2 font-bold">&#9662;</span> {/* Dropdown arrow */}
+            </div>
+            {showMenDropdown && (
+              <ul className="ml-4 mt-1 space-y-2">
+                <li className="text-lg cursor-pointer hover:text-gray-600">Shirts</li>
+                <li className="text-lg cursor-pointer hover:text-gray-600">Pants</li>
+                <li className="text-lg cursor-pointer hover:text-gray-600">Accessories</li>
+              </ul>
+            )}
+          </li>
           <li className="text-lg md:text-xl font-medium cursor-pointer hover:text-gray-600">Electronics</li>
           <li className="text-lg md:text-xl font-medium cursor-pointer hover:text-gray-600">Home & Lifestyle</li>
           <li className="text-lg md:text-xl font-medium cursor-pointer hover:text-gray-600">Medicine</li>
