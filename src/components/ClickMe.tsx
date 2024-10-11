@@ -8,10 +8,10 @@ const ClickMe = () => {
       <Image 
         src={clImage} 
         alt="card" 
-        layout="responsive" // Use responsive layout
-        width={1117} // Original width
-        height={600} // Original height
-        className="max-w-[80%] h-auto" // Set maximum width to 70%
+        layout="responsive" 
+        width={1117} 
+        height={600} 
+        className="max-w-[80%] h-auto"
       />
     </div>
   );

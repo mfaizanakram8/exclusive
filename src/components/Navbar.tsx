@@ -10,7 +10,7 @@ import lineImage from "@/components/images/Line 3.png";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Function to toggle the sidebar
+ 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };

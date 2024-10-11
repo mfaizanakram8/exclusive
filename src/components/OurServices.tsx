@@ -10,7 +10,7 @@ const OurServices = () => {
       <div className="flex flex-col md:flex-row md:space-x-10">
         <div className="flex flex-col items-center mb-6 md:mb-0">
           <Image
-            src={lImage} // Alternate through the images
+            src={lImage} 
             alt="Free and Fast Delivery"
             width={70}
             height={70}
@@ -22,7 +22,7 @@ const OurServices = () => {
 
         <div className="flex flex-col items-center mb-6 md:mb-0">
           <Image
-            src={aImage} // Alternate through the images
+            src={aImage} 
             alt="24/7 Customer Service"
             width={70}
             height={70}
@@ -34,7 +34,7 @@ const OurServices = () => {
 
         <div className="flex flex-col items-center mb-6 md:mb-0">
           <Image
-            src={cImage} // Alternate through the images
+            src={cImage} 
             alt="Money Back Guarantee"
             width={70}
             height={70}

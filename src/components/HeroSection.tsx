@@ -42,7 +42,7 @@ const HeroSection: React.FC = () => {
           <li className="text-lg md:text-xl font-medium cursor-pointer hover:text-gray-600">
             <div onClick={toggleWomenDropdown} className="flex items-center justify-between">
               Womens Fashion 
-              <span className="ml-2 font-bold">&#9662;</span> {/* Dropdown arrow */}
+              <span className="ml-2 font-bold">&#9662;</span> 
             </div>
             {showWomenDropdown && (
               <ul className="ml-4 mt-1 space-y-2">
@@ -55,7 +55,7 @@ const HeroSection: React.FC = () => {
           <li className="text-lg md:text-xl font-medium cursor-pointer hover:text-gray-600">
             <div onClick={toggleMenDropdown} className="flex items-center justify-between">
               Mens Fashion 
-              <span className="ml-2 font-bold">&#9662;</span> {/* Dropdown arrow */}
+              <span className="ml-2 font-bold">&#9662;</span> 
             </div>
             {showMenDropdown && (
               <ul className="ml-4 mt-1 space-y-2">

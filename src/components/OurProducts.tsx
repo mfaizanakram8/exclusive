@@ -8,10 +8,10 @@ import vImage from "@/components/images/Cart (5).png";
 import bImage from "@/components/images/Cart (4).png";
 import pImage from "@/components/images/Frame 619.png";
 
-// Array of product images
+
 const productImages = [xImage, cImage, vImage, bImage];
 
-// Array of product titles
+
 const productTitles = [
   "Curology Product Set",
   "ASUS PhD Gaming Laptop",
@@ -24,7 +24,7 @@ const productTitles = [
 ];
 
 const OurProducts = () => {
-  // Function to render stars based on rating
+  
   const renderStars = (rating: number) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {

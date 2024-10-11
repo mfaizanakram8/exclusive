@@ -12,7 +12,7 @@ import product6 from "@/components/images/Category-Phone (4).png";
 import product7 from "@/components/images/Category-Phone (5).png";
 import TImage from "@/components/images/Frame 623.png";
 
-// Product objects
+
 const originalProducts = [
   { src: product1, id: 1 },
   { src: product2, id: 2 },
@@ -23,19 +23,19 @@ const originalProducts = [
   { src: product7, id: 7 },
 ];
 
-// Repeat the products for continuous looping
+
 const products = [...originalProducts, ...originalProducts, ...originalProducts];
 
 const FlashSales = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMoving, setIsMoving] = useState(false);
 
-  // Automatic scrolling every 3 seconds
+  
   useEffect(() => {
     const interval = setInterval(() => {
       handleNext();
     }, 3000);
-    return () => clearInterval(interval); // Cleanup on unmount
+    return () => clearInterval(interval);
   }, [currentIndex]);
 
   const handleNext = () => {

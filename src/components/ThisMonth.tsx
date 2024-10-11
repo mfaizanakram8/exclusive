@@ -7,7 +7,7 @@ import vImage from "@/components/images/Cart (2).png";
 import bImage from "@/components/images/Cart (3).png";
 import pImage from '@/components/images/Frame 620.png';
 
-const productImages = [xImage, cImage, vImage, bImage]; // Array of product images
+const productImages = [xImage, cImage, vImage, bImage]; 
 
 const OurProducts = () => {
   return (

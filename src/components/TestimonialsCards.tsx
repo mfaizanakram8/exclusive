@@ -88,7 +88,7 @@ const FlashSales = () => {
           <Image src={jImage} alt="Previous" width={300} height={50} className="mr-[500px] mb-5 hidden md:block" />
 
           {/* Arrows */}
-          <div className="hidden md:flex space-x-4"> {/* Hide arrows on mobile */}
+          <div className="hidden md:flex space-x-4">
             <button
               onClick={handlePrev}
               aria-label="Previous"
@@ -120,18 +120,18 @@ const FlashSales = () => {
             {products.map((product, index) => (
               <div
                 key={index}
-                className="min-w-[60%] sm:min-w-[45%] md:min-w-[33.33%] lg:min-w-[25%] p-2 box-border" // Reduced width for mobile
+                className="min-w-[60%] sm:min-w-[45%] md:min-w-[33.33%] lg:min-w-[25%] p-2 box-border" 
               >
-                <div className="bg-white rounded-lg p-2 shadow-md"> {/* Reduced padding */}
+                <div className="bg-white rounded-lg p-2 shadow-md"> 
                   <Image
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-auto object-contain mb-2" // Reduced margin bottom
+                    className="w-full h-auto object-contain mb-2" 
                     width={200}
                     height={150}
                   />
-                  <h3 className="text-md font-semibold mb-1">{product.name}</h3> {/* Reduced font size */}
-                  <p className="text-gray-500 mb-1">{product.price}</p> {/* Reduced margin bottom */}
+                  <h3 className="text-md font-semibold mb-1">{product.name}</h3> 
+                  <p className="text-gray-500 mb-1">{product.price}</p> 
                   <p className="text-red-600 font-bold">{product.discount} Off</p>
                   <div className="flex justify-center mt-1">
                     {Array.from({ length: Math.round(product.rating) }).map((_, i) => (
