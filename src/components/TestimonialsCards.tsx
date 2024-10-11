@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import leftArrow from '@/components/images/Fill With Left Arrow.png';
@@ -120,18 +120,29 @@ const FlashSales = () => {
             {products.map((product, index) => (
               <div
                 key={index}
-                className="min-w-[60%] sm:min-w-[45%] md:min-w-[33.33%] lg:min-w-[25%] p-2 box-border" 
+                className="relative min-w-[60%] sm:min-w-[45%] md:min-w-[33.33%] lg:min-w-[25%] p-2 box-border group"
               >
-                <div className="bg-white rounded-lg p-2 shadow-md"> 
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-auto object-contain mb-2" 
-                    width={200}
-                    height={150}
-                  />
-                  <h3 className="text-md font-semibold mb-1">{product.name}</h3> 
-                  <p className="text-gray-500 mb-1">{product.price}</p> 
+                <div className="bg-white rounded-lg p-2 shadow-md relative overflow-hidden">
+                  <div className="relative">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-auto object-contain mb-2"
+                      width={200}
+                      height={150}
+                    />
+
+                    {/* Add to Cart button at the bottom of the image */}
+                    <div className="absolute bottom-0 left-0 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <button className="bg-black text-white font-bold py-2 w-full text-center">
+                        Add to Cart
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Product details */}
+                  <h3 className="text-md font-semibold mb-1">{product.name}</h3>
+                  <p className="text-gray-500 mb-1">{product.price}</p>
                   <p className="text-red-600 font-bold">{product.discount} Off</p>
                   <div className="flex justify-center mt-1">
                     {Array.from({ length: Math.round(product.rating) }).map((_, i) => (
@@ -145,7 +156,7 @@ const FlashSales = () => {
         </div>
       </div>
       <div className="flex items-center justify-center mt-7">
-        <button className="bg-red-600 text-light-beige font-semibold hover:bg-light-orange hover:text-white transition-colors duration-300 py-4 px-16">
+        <button className="bg-red-600 font-semibold hover:bg-light-orange text-white transition-colors duration-300 py-4 px-16">
           View All Products
         </button>
       </div>
@@ -153,4 +164,4 @@ const FlashSales = () => {
   );
 };
 
-export default FlashSales;        
+export default FlashSales;

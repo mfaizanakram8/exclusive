@@ -8,19 +8,17 @@ import vImage from "@/components/images/Cart (5).png";
 import bImage from "@/components/images/Cart (4).png";
 import pImage from "@/components/images/Frame 619.png";
 
-
 const productImages = [xImage, cImage, vImage, bImage];
-
 
 const productTitles = [
   "Curology Product Set",
   "ASUS PhD Gaming Laptop",
   "Canon EOS DSLR Camera ",
-  " Breed Dry Dog Food",
- "Curology Product Set",
+  "Breed Dry Dog Food",
+  "Curology Product Set",
   "ASUS PhD Gaming Laptop",
   "Canon EOS DSLR Camera ",
-  " Breed Dry Dog Food",
+  "Breed Dry Dog Food",
 ];
 
 const OurProducts = () => {
@@ -84,33 +82,43 @@ const OurProducts = () => {
           {Array(8)
             .fill(null)
             .map((_, index) => {
-              const rating = Math.floor(Math.random() * 5) + 1; // Random rating between 1 and 5
+              const rating = Math.floor(Math.random() * 5) + 1; 
               return (
                 <div
                   key={index}
-                  className="bg-white shadow-lg rounded-lg p-4 flex flex-col items-center"
+                  className="bg-white shadow-lg rounded-lg p-4 flex flex-col items-center group relative"
                 >
-                  <Image
-                    src={productImages[index % productImages.length]}
-                    alt={`Product ${index + 1}`}
-                    width={200}
-                    height={200}
-                    className="object-contain mb-4"
-                  />
-                  <h3 className="text-lg font-semibold mb-2">{productTitles[index]}</h3> {/* Separate heading for each product */}
+                  <div className="relative w-full">
+                   
+                    <div className="relative w-full">
+                      <Image
+                        src={productImages[index % productImages.length]}
+                        alt={`Product ${index + 1}`}
+                        width={200}
+                        height={200}
+                        className="object-contain mb-4 w-full" 
+                      />
+                    </div>
+
+                   
+                    <div className="absolute bottom-0 left-0 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <button className="bg-black text-white font-bold py-2 w-full text-center">
+                        Add to Cart
+                      </button>
+                    </div>
+                  </div>
+
+                  <h3 className="text-lg font-semibold mb-2">{productTitles[index]}</h3> 
                   <p className="text-gray-600 font-medium mb-4">${(Math.random() * 100 + 100).toFixed(2)}</p>
                   <div className="flex mb-2">
-                    {renderStars(rating)} {/* Render stars based on random rating */}
+                    {renderStars(rating)}
                   </div>
-                  <button className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">
-                    Add to Cart
-                  </button>
                 </div>
               );
             })}
         </div>
 
-        {/* View All Products Button */}
+       
         <div className="flex items-center justify-center mt-10">
           <button className="bg-red-600 text-white font-semibold py-4 px-16 rounded hover:bg-red-700 transition-colors duration-300">
             View All Products
